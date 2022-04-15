@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main class="d-flex flex-column align-items-center justify-content-center">
+      <div class="custom_container row">
+        <div class="col-12 col-md-3">
+          <div class="categories about_left">
+            <div class="catalogue_sidebar">
+              <div
+                class="sidebar_header d-flex align-items-center justify-content-center"
+              >
+                <i class="fas fa-th"></i>
+                <h4 class="mb-0 ms-3">Kateqoriyalar</h4>
+              </div>
+              {% include 'includes/category_sidebar.html' %}
+            </div>
+          </div>
+          <div class="sidebar_banner d-none d-md-block">
+            <img src="" alt="" />
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          <section class="about_us_section">
+            <h1>About Vape Art</h1>
+            <p>
+              {{text.text}}
+            </p>
+          </section>
+        </div>
+        <div class="col-12 mb-5">
+          <div class="w-100">
+            <h1 class="related_products">Tövsiyə olunanlar</h1>
+            <div class="row related swiper">
+              <div class="swiper-wrapper">
+                {% for product in products %}
+                <div class="swiper-slide product_box">
+                  <a href="/" class="prod_img_box">
+                  <img class="prod_img" src="{{ product.images.first.image.url }}" alt=""/>
+                </a>
+                  <div class="prod_info">
+                  <a href="" class="prod_name">Neque porro quisquam est qui dolorem ipsum quia</a>
+          <span class="prod_ingridients">est qui dolorem ipsum quia </span>
+          <div class="prod_footer">
+            <span class="prod_price">500 <i class="fa-solid fa-manat-sign"></i></span>
+            <button class="add_cart">Səbətə at</button>
+          </div>
+                </div>
+                </div>
+                {% endfor %}
+          </div>
+          <div class="swiper-button-prev related_button"></div>
+        <div class="swiper-button-next related_button"></div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main class="d-flex flex-column align-items-center justify-content-center">
+      <div class="custom_container row">
+        <div class="col-12 col-md-3">
+          <div class="categories about_left">
+            <div class="catalogue_sidebar">
+              <div
+                class="sidebar_header d-flex align-items-center justify-content-center"
+              >
+                <i class="fas fa-th"></i>
+                <h4 class="mb-0 ms-3">Kateqoriyalar</h4>
+              </div>
+              {% include 'includes/category_sidebar.html' %}
+            </div>
+          </div>
+          <div class="product_filter">
+            <h4 class="filter_heading">Filter</h4>
+            <ul class="filter_main_body">
+              <li>
+                <fieldset class="filter-price">
+                  <div class="price-field">
+                    <input
+                      type="range"
+                      min="100"
+                      max="500"
+                      value="135"
+                      id="lower"
+                    />
+                    <input
+                      type="range"
+                      min="100"
+                      max="500"
+                      value="500"
+                      id="upper"
+                    />
+                  </div>
+                  <div class="price-wrap">
+                    <span class="price-title">Filter</span>
+                    <div class="price-container">
+                      <div class="price-wrap-1">
+                        <label for="one">$</label>
+                        <input id="one" />
+                      </div>
+                      <div class="price-wrap_line">-</div>
+                      <div class="price-wrap-2">
+                        <label for="two">$</label>
+                        <input id="two" />
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </li>
+              <li class="lvl1 kombox-closed filter-stable-width" data-id="1">
+                <div
+                  class="kombox-filter-property-head filter_head"
+                  data-id="1"
+                >
+                  <span class="kombox-filter-property-name">Brend</span>
+                </div>
+                {% for brand in brands %}
+                <div
+                  class="kombox-combo kombox-filter-property-body filter_body"
+                  data-id="1"
+                >
+                
+                  <div class="kombox_sub">
+                    <input
+                      class="filter_checkbox"
+                      type="checkbox"
+                      value="asmodus"
+                      name=""
+                      id=""
+                    />
+                    <label for="">
+                      <a class="no_a" href=""></a>
+                      {{brand.title}} <span class="kombox-cnt">(1)</span>
+                    </label>
+                  </div>
+                  
+                </div>
+                {% endfor %}
+              </li>
+            </ul>
+          </div>
+          <div class="sidebar_banner d-none d-md-block">
+            <img src="" alt="" />
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          <div class="row subcategory_row">
+            <div class="breadcrumbs w-100">
+              <a href="/">Main page</a>
+              <a href="/">This page (category or subcategory)</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-5">
+              <div class="detail_img_box">
+                <img
+                  src="{{product.images.first.image.url}}"
+                  alt=""
+                />
+              </div>
+              <div class="row detail_other_imgs swiper">
+                <div class="swiper-wrapper">
+                  {% for image in product.images.all %}
+                  <div class="col-3 swiper-slide">
+                    <img
+                      src="{{image.image.url}}"
+                      alt=""
+                    />
+                  </div>
+                  {% endfor %}
+                </div>
+                <div class="detail_button swiper-button-prev" style="left: 0 !important;"></div>
+                <div class="detail_button swiper-button-next" style="right: 0 !important;"></div>
+              </div>
+            </div>
+            <div class="col-12 col-md-7">
+              <div class="img_brand_name">
+                <img
+                  src="{{product.brand.image.url}}"
+                  alt=""
+                />
+                <h4>{{product.title}}</h4>
+              </div>
+              <div class="detail_spec">
+                <ul>
+                  {% for filter in product.filters.all %}
+                  <li><span>{{filter.key}}</span><span>{{filter.value}}</span></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-5">
+            <div class="w-100">
+              <h1 class="related_products">Tövsiyə olunanlar</h1>
+              <div class="row related swiper">
+                <div class="swiper-wrapper">
+                  {% for product in products %}
+      <div class="swiper-slide product_box">
+        <a href="{% url 'core:product-detail' product.slug%}" class="prod_img_box">
+        <img class="prod_img" src="{{product.images.first.image.url}}" alt=""/>
+      </a>
+        <div class="prod_info">
+        <a href="" class="prod_name">{{product.title}}</a>
+<span class="prod_ingridients">{{product.description}}</span>
+<div class="prod_footer">
+  <span class="prod_price">{{product.price}} <i class="fa-solid fa-manat-sign"></i></span>
+  <button class="add_cart">Səbətə at</button>
+</div>
+      </div>
+      </div>
+        {% endfor %}
+            </div>
+            <div class="swiper-button-prev related_button"></div>
+          <div class="swiper-button-next related_button"></div>
+            </div>
+            </div>
+          </div>
+      </div>
+    </main>
+{% endblock %}
+
+{% block js %}
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".detail_other_imgs", {
+    slidesPerView: 4,
+    spaceBetween: 0,
+    direction: "horizontal",
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,17 @@
+@import "./main.css";
+@import "./reset.css";
+@import "./responsive.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Vazirmatn:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --colorPrimary: hsl(42, 69%, 63%);
+    --colorPrimaryHover: hsl(42, 69%, 56%);
+    --colorDark: hsl(41, 90%, 4%);
+    --colorSecondary: hsl(55, 67%, 80%);
+    --textPrimary: hsl(0, 0%, 0%);
+    --textGrey: hsl(0, 0%, 90%);
+    --colorLight: hsl(0, 0%, 100%);
+}
+

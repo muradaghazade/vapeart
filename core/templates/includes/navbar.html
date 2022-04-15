@@ -1,0 +1,89 @@
+{% load static %}
+<header
+class="d-flex flex-column align-items-center justify-content-center"
+>
+<div
+  class="header_nav row d-flex align-items-center justify-content-center"
+>
+  <div
+    class="custom_container row d-flex align-items-center justify-content-between"
+  >
+    <div class="col-2 d-md-none d-lg-none d-xl-none">
+      <a href="{% url 'core:index' %}"><img class="logo_mobile" src="{% static 'assets/vapeArt_beige_logo.png' %}" alt="" /></a>
+    </div>
+    <div class="search col-6 col-md-8">
+      <form class="search_form" action="{% url 'core:products' %}">
+        <input name="title" type="search" class="input_search" placeholder="Axtar"  value="{{request.GET.title}}" />
+        <button type="submit" class="button_search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+    <div class="header_order_call col-2">
+      <span><a href=""><span>Zəng sifarişi</span></a><i class="fa-solid fa-phone-flip"></i></span>
+    </div>
+    <div class="header_cart col-1">
+      <span><a href="/cart.html"><i class="fa-brands fa-opencart"></i></a></span>
+    </div>
+  </div>
+</div>
+<div
+  class="header_bottom_parent d-flex align-items-center justify-content-center"
+>
+  <div class="custom_container">
+    <div
+      class="row header_bottom d-flex align-items-center justify-content-between"
+    >
+      <div class="col-6 col-md-2 col-lg-2 col-xl-2 header_logo">
+        <a href="{% url 'core:index' %}"><img src="{% static 'assets/vapeArt_beige_logo.png' %}" alt="" /></a>
+      </div>
+      <div class="header_navbar col-12 col-md-6 col-lg-6 col-xl-6">
+        <nav class="w-100">
+          <ul class="d-flex align-items-center justify-content-center">
+            <li>
+              <a href="{% url 'core:index' %}">Əsas</a>
+            </li>
+            <li>
+              <a href="{% url 'core:about' %}">Haqqımızda</a>
+            </li>
+            <li>
+              <a href="{% url 'core:shipping' %}">Çatdırılma</a>
+            </li>
+            <li>
+              <a href="{% url 'core:brands' %}">Brendlər</a>
+            </li>
+            <li>
+              <a href="contacts.html">Əlaqə</a>
+            </li>
+            <li>
+              <a href="faq.html">FAQ</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div
+        class="header_contacts col-6 col-md-4 col-lg-4 col-xl-4 d-flex align-items-center justify-content-end"
+      >
+        <ul class="d-flex align-items-center justify-content-end me-4">
+          <li>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-telegram"></i></a>
+          </li>
+        </ul>
+        <div class="">
+          <p class="mb-0"><a href="tel: ">994102222222</a></p>
+          <span><a href="mail: ">example@gmail.com</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>

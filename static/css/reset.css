@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all ease-in-out 0.2s !important;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+button{
+    border: none;
+    outline: none;
+}
+
+a,
+a:focus,
+a:visited,
+:active{
+    text-decoration: none;
+    color: var(--textPrimary);
+}
+
+ul{
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.row{
+    margin: 0;
+}
+
+.custom_container{
+    width: 95%;
+    margin: 0 auto;
+}

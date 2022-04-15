@@ -1,0 +1,158 @@
+@media screen and (min-width: 1920px) {
+}
+
+@media screen and (min-width: 1360px) {
+}
+
+@media screen and (max-width: 820px) {
+  .custom_container {
+    width: 100%;
+  }
+  .faq_section label {
+    font-size: 14px;
+  }
+  .faq_section {
+    padding-top: 42px;
+  }
+  /* .sidebar_faq{
+        display: flex;
+        position: fixed;
+        top: 0;
+        z-index: 999;
+    } */
+  #section1,
+  #section2,
+  #section3 {
+    padding-top: 42px;
+  }
+
+  #type-delivery p,
+  .left-saleorder p,
+  .right-saleorder p {
+    font-size: 11px;
+    margin-bottom: 0;
+  }
+  .table td,
+  .table th {
+    padding: 0.5rem;
+    vertical-align: top;
+  }
+  .basketQty input {
+    width: 45px;
+    font-size: 12px;
+  }
+  td i {
+    right: 13px;
+    top: 11px;
+  }
+
+  .cart_table_header {
+    margin-top: 45px;
+  }
+  .cart_buttons button {
+    font-size: 12px;
+  }
+  .section_cart h1 {
+    font-size: 22px;
+  }
+  .table {
+    margin-bottom: 4rem;
+  }
+  .related_products {
+    font-size: 22px;
+  }
+
+  .modal_inner {
+    width: 100%;
+    background-color: #fff;
+  }
+  .header_order_call span a span {
+    display: none;
+  }
+
+  .sub_category_ul_main.active {
+    display: block;
+    position: relative;
+    left: 0;
+    top: auto;
+    z-index: auto;
+    width: 100%;
+  }
+
+  .sub_category_ul_main a {
+    font-size: 12px;
+    padding-left: 30px;
+  }
+  .category_header {
+    width: 50%;
+}
+.load_box i {
+    display: none;
+}
+.load_box {
+    border: none;
+    padding: 30px;
+}
+.tabloid .name {
+    font-size: 12px;
+    margin: 10px 0;
+}
+.tabloid .picture i{
+    font-size: 14px;
+    width: 60px;
+    height: auto;
+}
+
+
+
+}
+
+@media screen and (max-width: 768px) {
+  .search_form input {
+    width: 100%;
+  }
+  header i {
+    font-size: 22px;
+  }
+
+  .header_nav {
+    padding: 5px;
+  }
+
+  .header_logo {
+    order: 2;
+    display: none;
+  }
+  .header_contacts {
+    order: 3;
+    display: none !important;
+  }
+  .header_navbar nav ul li a {
+    padding: 2px 8px;
+    font-size: 12px;
+  }
+  .header_navbar {
+    height: 35px !important;
+    background-color: #ececec;
+    padding: 0;
+  }
+
+  .header_bottom {
+    height: 35px;
+  }
+  .header_bottom_parent {
+    border-bottom: none;
+  }
+  .header_bottom {
+    padding: 0;
+  }
+  .header_bottom_parent > div {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 375px) {
+}
