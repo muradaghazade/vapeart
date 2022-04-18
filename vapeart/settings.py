@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'vapeart.wsgi.application'
 
 # Database
 import time
-time.sleep(5)
+time.sleep(1)
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
