@@ -56,18 +56,55 @@
     </div>
     <!-- ****************ORDER CALL MODAL****************** -->
 
+    <h1 id="order_price" style="display: none;"></h1>
+
     {% include 'includes/navbar.html' %}
 
     {% block content %}
     {% endblock %}
 
     {% include 'includes/footer.html' %}
+    {% csrf_token %}
+
+    <script>
+
+const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    </script>
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="{% static 'js/script.js' %}"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+
+    <script>
+      document.querySelectorAll('.add_cart').forEach(el => {
+        el.addEventListener('click', (e) => {
+          if (JSON.parse(localStorage.getItem('products'))) {
+            products = JSON.parse(localStorage.getItem('products'))
+            if (products.includes(parseInt(e.target.getAttribute('id')))==false) {
+              products.push(parseInt(e.target.getAttribute('id')))
+              localStorage.setItem('products', JSON.stringify(products))
+            
+            e.target.innerText="Elave edildi"
+            e.target.style.backgroundColor="green"
+            }
+            
+          }
+          else {
+            products = []
+            if (products.includes(parseInt(e.target.getAttribute('id')))==false) {
+            products.push(parseInt(e.target.getAttribute('id')))
+            localStorage.setItem('products', JSON.stringify(products))
+            e.target.innerText="Elave edildi"
+            e.target.style.backgroundColor="green"
+            }
+          }
+          
+      })
+      })
+      
     </script>
 
 

@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.db import models
 from .commons import slugify
 
@@ -111,3 +112,25 @@ class Shipping(models.Model):
     class Meta:
         verbose_name = 'Shipping Text'
         verbose_name_plural = 'Shipping Texts'
+
+
+class FAQ(models.Model):
+    question = models.CharField(max_length=200, unique=True)
+    answer = models.TextField('Text')
+    # category = models.ForeignKey('FAQCategory', on_delete=models.CASCADE, db_index=True, related_name='faqs', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'FAQ'
+        verbose_name_plural = 'FAQs'
+
+
+class Order(models.Model):
+    full_name = models.CharField(max_length=200)
+    number = models.CharField(max_length=200)
+    email = models.EmailField(('email adress'),null=True, blank=True)
+    address = models.CharField(max_length=5000)
+    price = models.DecimalField("Price", max_digits=6, decimal_places=2)
+
+    class Meta:
+        verbose_name = 'Order'
+        verbose_name_plural = 'Orders'

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main
+      class="d-flex flex-column align-items-center justify-content-center main_faq"
+    >
+      <div class="custom_container row">
+        <!-- <div class="col-12 col-md-3">
+          <div class="sidebar_faq d-none d-md-block">
+            <a href="#section1">Veypinq haqqında</a>
+            <a href="#section2">Məhsullar haqqında</a>
+            <a href="#section3">Mayelər</a>
+          </div>
+        </div> -->
+        <div class="col-12 col-md-12 faq_right">
+          <section id="section1" class="faq_section">
+            <h3>Tez-tez verilən suallar</h3>
+            {% for faq in faqs %}
+            <div>
+              <input id="{{faq.id}}" name="accordion-o-veypinge" type="checkbox" />
+              <label for="{{faq.id}}">{{faq.question}}</label>
+              <article class="ac-small">
+                <p>
+                  {{faq.answer}}
+                </p>
+              </article>
+            </div>
+            {% endfor %}
+          </section>
+        </div>
+      </div>
+</main>
+{% endblock %}

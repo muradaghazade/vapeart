@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import *
 
 
-admin.site.register([Filter, Image, Slider, Category, Brand, AboutUS, Shipping])
+admin.site.register([Filter, Image, Slider, Category, Brand, AboutUS, Shipping, FAQ, Order])
 
 
 class ProductImageInline(admin.TabularInline):

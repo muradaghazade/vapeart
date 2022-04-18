@@ -23,7 +23,7 @@ class="d-flex flex-column align-items-center justify-content-center"
       <span><a href=""><span>Zəng sifarişi</span></a><i class="fa-solid fa-phone-flip"></i></span>
     </div>
     <div class="header_cart col-1">
-      <span><a href="/cart.html"><i class="fa-brands fa-opencart"></i></a></span>
+      <span><a href="{% url 'core:orders' %}"><i class="fa-brands fa-opencart"></i></a></span>
     </div>
   </div>
 </div>
@@ -53,10 +53,10 @@ class="d-flex flex-column align-items-center justify-content-center"
               <a href="{% url 'core:brands' %}">Brendlər</a>
             </li>
             <li>
-              <a href="contacts.html">Əlaqə</a>
+              <a href="{% url 'core:contacts' %}">Əlaqə</a>
             </li>
             <li>
-              <a href="faq.html">FAQ</a>
+              <a href="{% url 'core:faqs' %}">FAQ</a>
             </li>
           </ul>
         </nav>

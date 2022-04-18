@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main class="d-flex flex-column align-items-center justify-content-center">
+      <div class="custom_container row">
+        <div class="col-12 col-md-3">
+          <div class="categories about_left">
+            <div class="catalogue_sidebar">
+              <div
+                class="sidebar_header d-flex align-items-center justify-content-center"
+              >
+                <i class="fas fa-th"></i>
+                <h4 class="mb-0 ms-3">Kateqoriyalar</h4>
+              </div>
+              {% include 'includes/category_sidebar.html' %}
+            </div>
+          </div>
+          <div class="sidebar_banner d-none d-md-block">
+            <img src="" alt="" />
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          <section class="section_cart">
+            <h1>Sifarişin təsdiqi</h1>
+            <div class="zakaz">
+              <form id="orderSend" method="POST" action="" class="row">
+                {% csrf_token %}
+                {{form.non_field_error}}
+                <div class="col-12 col-md-6">
+                  <div class="form-group" id="personaly">
+                    <div class="delivery-p-title mb-2">
+                      <b style="cursor: pointer">Alıcı</b>
+                    </div>
+                    <div class="row contact-client">
+                      <div class="col-md-6 p-0">
+                        <div class="form-group">
+                          <label style="cursor: pointer">Ad, Soyad, Ata adı *</label>
+                          {{form.full_name}}
+                          {{form.full_name.errors}}
+                        </div>
+                      </div>
+                      <div class="col-md-6 p-0">
+                        <div class="form-group">
+                          <label style="cursor: pointer">Telefon *</label>
+                          {{form.number}}
+                          {{form.number.errors}}
+                        </div>
+                      </div>
+                      <div class="col-md-6 p-0">
+                        <div class="form-group">
+                          <label style="cursor: pointer">Email *</label>
+                          {{form.email}}
+                          {{form.email.errors}}
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label style="cursor: pointer"
+                            >Çatdırılma ünvanı:*</label
+                          >
+                          {{form.address}}
+                          {{form.address.errors}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="itogo">
+                    {{form.price}}
+                    <!-- <p>
+                      <span>Çatdırılma:</span
+                      ><span class="delivery-total"><b>666 azn</b></span>
+                    </p> -->
+                    <p class="block-finish-total" style="margin-bottom: 0px">
+                      <span><b>Cəmi ödəniş:</b></span>
+                      <span class="price finish-total" style="cursor: pointer"
+                        ><b id="final_price">3 490 azn</b></span
+                      >
+                    </p>
+                    <input type="submit" value="Submit">
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 p-0">
+                  <div class="cart_table_header mb-3">
+                    <h1>Məhsullar</h1>
+                    <div class="cart_buttons">
+                      <button id="clearall" type="button">Hamısını sil</button>
+                      <a href="{% url 'core:products' %}"><button type="button">Alış-verişə davam</button></a>
+                    </div>
+                  </div>
+                  <table class="table table-responsive table-items">
+                    <tbody id="prod_table">
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+        <div class="col-12 mb-5">
+          <div class="w-100">
+            <h1 class="related_products">Tövsiyə olunanlar</h1>
+            <div class="row related swiper">
+              <div class="swiper-wrapper">
+                {% for product in products %}
+                <div class="swiper-slide product_box">
+                  <a href="{% url 'core:product-detail' product.slug%}" class="prod_img_box">
+                  <img class="prod_img" src="{{product.images.first.image.url}}" alt=""/>
+                </a>
+                  <div class="prod_info">
+                  <a href="" class="prod_name">{{product.title}}</a>
+          <span class="prod_ingridients">{{product.description}}</span>
+          <div class="prod_footer">
+            <span class="prod_price">{{product.price}} <i class="fa-solid fa-manat-sign"></i></span>
+            <button id="{{product.id}}" class="add_cart">Səbətə at</button>
+          </div>
+                </div>
+                </div>
+                  {% endfor %}
+            
+          </div>
+          <div class="swiper-button-prev related_button"></div>
+        <div class="swiper-button-next related_button"></div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </main>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/cart.js' %}"></script>
+{% endblock %}
