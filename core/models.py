@@ -70,6 +70,7 @@ class Slider(models.Model):
 
 
 class Category(models.Model):
+    icon = models.ImageField('Image',upload_to='images/', null=True, blank=True)
     title = models.CharField(max_length=200, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

@@ -19,3 +19,8 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ['title']
 
 admin.site.register(Product, ProductAdmin)
+
+
+admin.site.site_header = "Vapeart"
+admin.site.index_title = "Vapeart"
+admin.site.site_title = "Vapeart Administration"

@@ -1,13 +1,12 @@
-<ul class="sidebar_ul">
-    {% for category in categories %}
-    <li style="padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 18px;
-    border-bottom: 1px solid var(--colorSecondary);">
-      <a href="{% url 'core:products' %}?category={{category.title}}" >{{category.title}}</a>
-      
-  </li>
-  {% endfor %}
+<ul class="sidebar_ul active">
+  {% for category in categories %}
+  <li data-index="1" class="category_ul_main">
+    <a href="{% url 'core:products' %}?category={{category.title}}" >{{category.title}} <i class="fa-solid fa-angle-right"></i></a>
+    <ul data-index="1" class="sub_category_ul_main">
+      <li><a href="/">lorem</a></li>
+      <li><a href="/">lorem</a></li>
+      <li><a href="/">lorem</a></li>
   </ul>
+</li>
+  {% endfor %}
+</ul>

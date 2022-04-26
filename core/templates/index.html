@@ -4,21 +4,25 @@
 
 {% block content %}
     <main class="d-flex flex-column align-items-center justify-content-center">
-      <div class="custom_container_index custom_container row">
-          <div class="p-0 col-12 col-md-3">
-        <div class="categories">
-          <div class="catalogue_sidebar">
-            <div class="sidebar_header d-flex align-items-center justify-content-center">
-              <i class="fas fa-th"></i>
-              <h4 class="mb-0 ms-3">Kateqoriyalar</h4>
+    <div class="custom_container_index custom_container row">
+    <div class="p-0 col-12 col-md-3">
+      <div class="categories">
+        <div class="catalogue_sidebar">
+          <div class="sidebar_header d-flex align-items-center justify-content-between">
+            <h4 class="mb-0 ms-3">Kateqoriyalar</h4>
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-            {% include 'includes/category_sidebar.html' %}
           </div>
+          {% include 'includes/category_sidebar.html' %}
         </div>
-        <div class="sidebar_banner d-none d-md-block">
-          <img src="{% static 'assets/ac4c729852cee782eea7c106fe5cb118.jpg' %}" alt=""/>
-        </div>
-    </div>
+      </div>
+      <div class="sidebar_banner d-none d-md-block">
+        <img src="./assets/ac4c729852cee782eea7c106fe5cb118.jpg" alt=""/>
+      </div>
+  </div>
     <div class="p-0 col-12 col-md-9">
       <section class="section_slider">
 <div class="swiper">

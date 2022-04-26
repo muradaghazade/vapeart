@@ -1,5 +1,5 @@
 {% load static %}
-<header
+<!-- <header
 class="d-flex flex-column align-items-center justify-content-center"
 >
 <div
@@ -86,4 +86,99 @@ class="d-flex flex-column align-items-center justify-content-center"
     </div>
   </div>
 </div>
+</header> -->
+
+
+
+<header class="d-flex flex-column align-items-center justify-content-center">
+  <div
+    class="header_nav row d-none d-md-flex align-items-center justify-content-center"
+  >
+    <div
+      class="custom_container row d-flex align-items-center justify-content-between"
+    >
+      <!-- <div class="col-2 d-md-none d-lg-none d-xl-none">
+        <img class="logo_mobile" src="./assets/vapeArt_beige_logo.png" alt="" />
+      </div>
+     
+      <div class="header_cart col-1">
+        <span><a href="/cart.html"><i class="fa-brands fa-opencart"></i></a></span>
+      </div> -->
+    </div>
+  </div>
+  <div
+    class="header_bottom_parent d-flex align-items-center justify-content-center">
+    <div class="custom_container">
+      <div class="row header_bottom d-flex align-items-center justify-content-between">
+        <div class="col-12 col-md-auto">
+          <div class=" header_logo">
+            <a href="{% url 'core:index' %}"><img class="logo_mobile" src="{% static 'assets/vapeArt_beige_logo.png' %}" alt="" /></a>
+          </div>
+          <div class="search">
+            <form class="search_form" action="{% url 'core:products' %}">
+              <input name="title" type="search" class="input_search" placeholder="Axtar"  value="{{request.GET.title}}" />
+              <button type="submit" class="button_search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-12 col-md-auto">
+          <div class="header_navbar">
+            <nav class="w-100">
+              <ul class="d-flex align-items-center justify-content-between justify-content-md-end">
+                <li>
+                  <a href="{% url 'core:index' %}">Əsas</a>
+                </li>
+                <li>
+                  <a href="{% url 'core:about' %}">Haqqımızda</a>
+                </li>
+                <li>
+                  <a href="{% url 'core:shipping' %}">Çatdırılma</a>
+                </li>
+                <li>
+                  <a href="{% url 'core:brands' %}">Brendlər</a>
+                </li>
+                <li>
+                  <a href="{% url 'core:contacts' %}">Əlaqə</a>
+                </li>
+                <li>
+                  <a href="{% url 'core:faqs' %}">FAQ</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+            <div
+              class="header_contacts d-flex align-items-center justify-content-end"
+            >
+            <div class="header_call">
+              <p class="mb-0"><a href="tel: ">994102222222</a></p>
+              <span><a href="mail: ">example@gmail.com</a></span>
+            </div>
+              <ul class="d-flex align-items-center justify-content-end me-4">
+                <li>
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                </li>
+              </ul>
+              <div class="header_cart col-auto col-md-1">
+                <span>
+                  <!-- <span class="count_cart">0</span> -->
+                  <a href="{% url 'core:orders' %}"><i class="fa-solid fa-basket-shopping"></i></a>
+                </span>
+              </div>
+            </div>
+        </div>
+      
+      </div>
+    </div>
+  </div>
 </header>
