@@ -3,9 +3,9 @@
   <li data-index="1" class="category_ul_main">
     <a href="{% url 'core:products' %}?category={{category.title}}" >{{category.title}} <i class="fa-solid fa-angle-right"></i></a>
     <ul data-index="1" class="sub_category_ul_main">
-      <li><a href="/">lorem</a></li>
-      <li><a href="/">lorem</a></li>
-      <li><a href="/">lorem</a></li>
+      {% for sub in category.sub_categories %}
+      <li><a href="{% url 'core:products' %}?category={{category.title}}">{{sub.title}}</a></li>
+      {% endfor %}
   </ul>
 </li>
   {% endfor %}

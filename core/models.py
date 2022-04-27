@@ -84,6 +84,22 @@ class Category(models.Model):
         return self.title
 
 
+class SubCategory(models.Model):
+    icon = models.ImageField('Image',upload_to='images/', null=True, blank=True)
+    title = models.CharField(max_length=200, unique=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='sub_categories', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+        ordering = ['title']
+
+    def __str__(self):
+        return self.title
+
+
 class Brand(models.Model):
     title = models.CharField(max_length=200, unique=True)
     image = models.ImageField('Image',upload_to='images/', null=True, blank=True)
